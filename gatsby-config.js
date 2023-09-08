@@ -3,7 +3,18 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: 'Gatsby-app',
   },
-  plugins: ['gatsby-plugin-netlify'],
+  plugins: [
+    'gatsby-plugin-netlify',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      },
+    },
+  ],
 };
